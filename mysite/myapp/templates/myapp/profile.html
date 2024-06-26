@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calorie Tracker-Profile</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon.png' %}"
+    />
+    <style>
+      body {
+        background-color: powderblue;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .profile-card {
+        background-color: white;
+        border: 1px solid #e1e4e8;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .profile-card img {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      .profile-card h4 {
+        margin: 10px 0;
+        font-size: 22px;
+      }
+      .profile-card h5 {
+        margin: 5px 0;
+        font-size: 18px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+      <img src="{{ user.profile.image.url }}" alt="Profile Image" />
+      <h4>Name: {{ user.username }}</h4>
+      <h5>Email: {{ user.email }}</h5>
+    </div>
+  </body>
+</html>
